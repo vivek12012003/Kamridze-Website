@@ -1,2 +1,2 @@
 # Kamridze-Website
-Website of 
+Website of Kamridze School
