@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamridze International School - Shaping Tomorrow's Leaders</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="light" id="body">
+    <a href="#hero" class="skip-link">Skip to main content</a>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="scrollToSection('hero')">
+                    <div class="logo-icon">
+                        <img src="Logo.jpg" alt="Kamridze School Logo" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Kamridze</h1>
+                        <p>International School Chourai</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav desktop">
+                    <button onclick="scrollToSection('hero')" class="nav-link active">Home</button>
+                    <button onclick="scrollToSection('about')" class="nav-link">About</button>
+                    <button onclick="scrollToSection('gallery')" class="nav-link">Gallery</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                </nav>
+
+                <div class="header-actions">
+                    <!-- Theme Toggle -->
+                    <button class="icon-btn theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                        <svg class="sun-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                        </svg>
+                        <svg class="moon-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+
+                    <!-- Enquire Button -->
+                    <button class="primary-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfI9bNyS3SXZ24pIIBdmWokB4xat0kX1krXR785Jr71MoKVcg/viewform?usp=dialog'" aria-label="Enquire now - opens Google">Enquire Now</button>
+
+                    <!-- Mobile Menu Toggle (Sideboard) -->
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+                        <span class="hamburger" aria-hidden="true">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <button onclick="scrollToSection('hero'); toggleMobileMenu()" class="mobile-nav-link">Home</button>
+            <button onclick="scrollToSection('about'); toggleMobileMenu()" class="mobile-nav-link">About</button>
+            <button onclick="scrollToSection('gallery'); toggleMobileMenu()" class="mobile-nav-link">Gallery</button>
+            <button onclick="scrollToSection('contact'); toggleMobileMenu()" class="mobile-nav-link">Contact</button>
+            <button onclick="window.location.href='https://www.google.com'; toggleMobileMenu()" class="mobile-cta-btn">Enquire Now</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/>
+                        </svg>
+                        Admissions Open for 2026-27
+                    </div>
+
+                    <h1 class="hero-title">
+                        Welcome to<br>
+                        <span class="highlight">Kamridze International</span><br>
+                        <span class="highlight">School Chourai</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Empowering minds, shaping futures. Experience quality education from <strong>Nursery to Class 12</strong> under <strong>MP Board (CBSE pattern)</strong>—with a perfect blend of academic excellence and character development in Chourai.
+                    </p>
+                    <p class="hero-meta">
+                        Est. 2016 · Nursery to Class 12 · MP Board (CBSE pattern)
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="primary-btn large" onclick="scrollToSection('contact')">
+                            Start Your Journey
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <button class="outline-btn large" onclick="scrollToSection('about')">Learn More</button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number" data-target="09" data-suffix="+">0</div>
+                            <div class="stat-label">Years of Excellence</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+                            <div class="stat-label">Happy Students</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                            <div class="stat-label">Expert Teachers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-target="95" data-suffix="%">0</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-top">
+                    <div class="section-header reveal">
+                        <div class="badge">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 1 6.5V17a2.5 2.5 0 0 1 1 2.5V6.5A2.5 2.5 0 0 1 4 4z"/>
+                                <path d="M12 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                            </svg>
+                            About Us
+                        </div>
+                        <h2>Shaping Tomorrow's Leaders</h2>
+                        <p>Discover what makes Kamridze International School a beacon of educational excellence. We have been nurturing young minds since 2016, with a complete journey from early years to senior secondary.</p>
+                    </div>
+
+                    <!-- Academic info dialog box -->
+                    <aside class="academic-dialog reveal">
+                        <div class="academic-dialog-inner">
+                            <h3 class="academic-dialog-title">Academic</h3>
+                            <p class="academic-dialog-board">MP Board (CBSE pattern)</p>
+                            <ul class="academic-dialog-list">
+                                <li><span class="academic-dialog-label">Grades</span> Nursery – Class 12</li>
+                                <li><span class="academic-dialog-label">Est.</span> 2016</li>
+                                <li><span class="academic-dialog-label">11th & 12th</span> Mathematics, Biology, Commerce, Arts</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Mission Card -->
+                    <div class="card reveal">
+                        <div class="card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide quality education that empowers students with knowledge, skills, and values to become responsible global citizens and lifelong learners.</p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="card reveal reveal-delay-1">
+                        <div class="card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To be recognized as a leading educational institution that nurtures innovation, creativity, and academic excellence while fostering a supportive and inclusive learning community.</p>
+                    </div>
+
+                    <!-- Values Card -->
+                    <div class="card reveal reveal-delay-2">
+                        <div class="card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <h3>Our Values</h3>
+                        <p>Integrity, Excellence, Innovation, Respect, and Responsibility form the foundation of our educational philosophy and guide everything we do.</p>
+                    </div>
+                </div>
+
+                <!-- Programs -->
+                <div class="programs-section">
+                    <h3 class="programs-title reveal">Our Programs</h3>
+                    <div class="programs-list">
+                        <div class="program enhanced reveal">
+                            <div class="program-icon blue">
+                                <span class="emoji-icon">📚</span>
+                            </div>
+                            <div>
+                                <h4>Academic Excellence</h4>
+                                <p>Nursery to Class 12 under MP Board (CBSE pattern), with modern teaching methodologies and structured assessment.</p>
+                                <div class="program-features">
+                                    <span class="feature-tag">Nursery – Class 12</span>
+                                    <span class="feature-tag">MP Board (CBSE pattern)</span>
+                                    <span class="feature-tag">Expert Teachers</span>
+                                    <span class="feature-tag">Smart Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program enhanced reveal reveal-delay-1">
+                            <div class="program-icon green">
+                                <span class="emoji-icon">🎓</span>
+                            </div>
+                            <div>
+                                <h4>Senior Secondary (11th & 12th)</h4>
+                                <p>Four streams to match every aspiration: Mathematics, Biology, Commerce, and Arts—each with dedicated faculty and resources.</p>
+                                <div class="program-features">
+                                    <span class="feature-tag">Mathematics</span>
+                                    <span class="feature-tag">Biology</span>
+                                    <span class="feature-tag">Commerce</span>
+                                    <span class="feature-tag">Arts</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program enhanced reveal reveal-delay-2">
+                            <div class="program-icon purple">
+                                <span class="emoji-icon">🎨</span>
+                            </div>
+                            <div>
+                                <h4>Arts & Culture</h4>
+                                <p>Rich creative programs for artistic development</p>
+                                <div class="program-features">
+                                    <span class="feature-tag">Music & Dance</span>
+                                    <span class="feature-tag">Visual Arts</span>
+                                    <span class="feature-tag">Drama</span>
+                                    <span class="feature-tag">Cultural Events</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program enhanced reveal reveal-delay-3">
+                            <div class="program-icon orange">
+                                <span class="emoji-icon">⚽</span>
+                            </div>
+                            <div>
+                                <h4>Sports & Athletics</h4>
+                                <p>Comprehensive sports program for physical fitness</p>
+                                <div class="program-features">
+                                    <span class="feature-tag">Multiple Sports</span>
+                                    <span class="feature-tag">Professional Coaching</span>
+                                    <span class="feature-tag">Annual Events</span>
+                                    <span class="feature-tag">Fitness Programs</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="program enhanced reveal reveal-delay-4">
+                            <div class="program-icon teal">
+                                <span class="emoji-icon">💻</span>
+                            </div>
+                            <div>
+                                <h4>Technology Integration</h4>
+                                <p>Modern tech-enhanced learning environments</p>
+                                <div class="program-features">
+                                    <span class="feature-tag">Smart Classrooms</span>
+                                    <span class="feature-tag">Computer Labs</span>
+                                    <span class="feature-tag">Digital Library</span>
+                                    <span class="feature-tag">Online Resources</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <path d="M21 15l-5-5L5 15"/>
+                        </svg>
+                        Gallery
+                    </div>
+                    <h2>Our Campus & Events</h2>
+                    <p>Moments that capture the spirit of our school community</p>
+                </div>
+
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- Populated by gallery-data.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Contact Us
+                    </div>
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We'd love to hear from you. Reach out and let's start a conversation.</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info reveal">
+                        <div class="contact-details">
+                            <div class="contact-item reveal">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Our Address</h4>
+                                    <p>Kamridze International School<br>Chourai, India</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item reveal reveal-delay-1">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:+91XXXXXXXXXX" style="color: inherit; text-decoration: none;">+91 XXXXX XXXXX</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item reveal reveal-delay-2">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <p><a href="mailto:info@kamridze.edu.in" style="color: inherit; text-decoration: none;">info@kamridze.edu.in</a></p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item reveal reveal-delay-3">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12 6 12 12 16 14"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4>Office Hours</h4>
+                                    <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-cta reveal reveal-delay-4">
+                            <button class="primary-btn large" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfI9bNyS3SXZ24pIIBdmWokB4xat0kX1krXR785Jr71MoKVcg/viewform?usp=dialog'">
+                                Fill Inquiry Form
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-map reveal reveal-delay-1">
+                        <div class="map-container">
+                            <!-- To get the exact embed code with proper centering: -->
+                            <!-- 1. Open https://maps.app.goo.gl/ah2hWTtKVHgRzvib9 -->
+                            <!-- 2. Click the three dots menu (⋮) > Share or embed map -->
+                            <!-- 3. Click "Embed a map" tab -->
+                            <!-- 4. Copy the iframe src URL and replace the src below -->
+                            <iframe 
+                                src="https://www.google.com/maps?q=Kamridze+International+Public+School,+Chourai,+India&hl=en&z=16&output=embed"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; border-radius: var(--radius-xl);" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Kamridze International School Location"> 
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer Left: Logo & Description -->
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img src="Logo.jpg" alt="Kamridze School Logo" class="footer-logo-img">
+                        <div>
+                            <h4>Kamridze</h4>
+                            <p>International School</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Empowering minds, shaping futures. Kamridze International School—Nursery to Class 12, MP Board (CBSE pattern). Est. 2016, Chourai.
+                    </p>
+                </div>
+
+                <!-- Footer Center: Contact Information -->
+                <div class="footer-center">
+                    <h4>Contact Information</h4>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <div>
+                            <p class="contact-label">Address</p>
+                            <p class="contact-value">123 Education Street, Tbilisi, Georgia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <div>
+                            <p class="contact-label">Phone</p>
+                            <p class="contact-value">+995 (32) 299-99-99</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        <div>
+                            <p class="contact-label">Email</p>
+                            <p class="contact-value"><a href="mailto:info@kamridze.edu.ge">info@kamridze.edu.ge</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Right: Links & Social -->
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <nav>
+                            <button onclick="scrollToSection('hero')">Home</button>
+                            <button onclick="scrollToSection('about')">About Us</button>
+                            <button onclick="scrollToSection('gallery')">Gallery</button>
+                            <button onclick="scrollToSection('contact')">Contact</button>
+                        </nav>
+                    </div>
+
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook" title="Follow on Facebook">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="X (Twitter)" title="Follow on X">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                                    <path d="M4 4l16 16M20 4L4 20"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram" title="Follow on Instagram">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.766 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kamridze International School. All rights reserved. Est. 2016.</p>
+                <p>Nursery to Class 12 · MP Board (CBSE pattern) · Made with ❤️ for education</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <!-- Grid View -->
+        <div class="gallery-modal-content" id="gridViewContent">
+            <div class="modal-header">
+                <h2 id="albumTitle">Annual 2025</h2>
+                <button class="modal-close-btn" onclick="closeGalleryModal()" aria-label="Close gallery">✕</button>
+            </div>
+            <div class="photos-grid" id="photosGrid"></div>
+        </div>
+
+        <!-- Enlarged View -->
+        <div class="enlarged-modal-content" id="enlargedViewContent">
+            <button class="modal-close-btn" onclick="closeEnlargedView()" aria-label="Back">✕</button>
+            <div class="enlarged-image-wrapper">
+                <button class="nav-button prev-btn" onclick="goToPrevPhoto()">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <img id="enlargedImg" src="" alt="Enlarged photo" class="enlarged-photo">
+                <button class="nav-button next-btn" onclick="goToNextPhoto()">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M9 19l7-7-7-7"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="photo-counter" id="photoCounter"></div>
+        </div>
+    </div>
+
+    <script src="gallery-data.js"></script>
+    <script src="script.js"></script>
+    <script>
+      (function() {
+        function renderGallery() {
+          var grid = document.getElementById('galleryGrid');
+          if (!grid) return;
+          var events = getEvents();
+          var revealClasses = ['reveal', 'reveal reveal-delay-1', 'reveal reveal-delay-2', 'reveal reveal-delay-3'];
+          var iconSvg = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 15"/></svg>';
+
+          grid.innerHTML = events.map(function(evt, i) {
+            // Prefer main.jpg as cover if provided, otherwise fall back to gradient.
+            var bgStyle;
+            if (evt.coverImage) {
+              bgStyle = 'background-image:url(\'' + evt.coverImage + '\');background-size:cover;background-position:center';
+            } else {
+              bgStyle = 'background:linear-gradient(' + (evt.gradient || '135deg, #667eea 0%, #764ba2 100%') + ')';
+            }
+
+            var rc = revealClasses[i % revealClasses.length];
+
+            return '<div class="gallery-item ' + rc + '" onclick="openLightbox(\'' + evt.id + '\')">' +
+                     '<div class="gallery-image" style="' + bgStyle + '">' + iconSvg + '</div>' +
+                     '<div class="gallery-info">' +
+                       '<h4>' + (evt.name || '').replace(/</g, '&lt;') + '</h4>' +
+                       '<p>' + (evt.description || '').replace(/</g, '&lt;') + '</p>' +
+                     '</div>' +
+                   '</div>';
+          }).join('');
+
+          if (typeof initRevealAnimations === 'function') initRevealAnimations();
+        }
+
+        function init() {
+          renderGallery();
+          window.addEventListener('pageshow', function(e) {
+            if (e.persisted) renderGallery();
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+</body>
+</html>
+
