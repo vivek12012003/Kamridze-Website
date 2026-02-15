@@ -543,11 +543,14 @@
           var revealClasses = ['reveal', 'reveal reveal-delay-1', 'reveal reveal-delay-2', 'reveal reveal-delay-3'];
           var iconSvg = '<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 15"/></svg>';
 
+          var basePath = (typeof getGalleryBasePath === 'function') ? getGalleryBasePath() : '';
+          var resolveUrl = function(rel) { return basePath ? basePath + '/' + rel : rel; };
           grid.innerHTML = events.map(function(evt, i) {
             // Prefer main.jpg as cover if provided, otherwise fall back to gradient.
             var bgStyle;
             if (evt.coverImage) {
-              bgStyle = 'background-image:url(\'' + evt.coverImage + '\');background-size:cover;background-position:center';
+              var coverUrl = resolveUrl(evt.coverImage);
+              bgStyle = 'background-image:url(\'' + coverUrl.replace(/'/g, '%27') + '\');background-size:cover;background-position:center';
             } else {
               bgStyle = 'background:linear-gradient(' + (evt.gradient || '135deg, #667eea 0%, #764ba2 100%') + ')';
             }

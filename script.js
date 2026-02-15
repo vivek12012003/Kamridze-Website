@@ -283,13 +283,27 @@ document.addEventListener('keydown', (e) => {
             if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
-        closeLightbox();
+        closeGalleryModal();
     }
 });
 
 // ============================================
 //   GALLERY MODAL - Folder View
 // ============================================
+// Base path so gallery works when site is hosted in a subdirectory
+// (e.g. example.com/Kamridze-Website/). Resolves relative image URLs correctly.
+function getGalleryBasePath() {
+    const path = window.location.pathname;
+    const lastSlash = path.lastIndexOf('/');
+    if (lastSlash <= 0) return '';
+    return path.substring(0, lastSlash);
+}
+
+function resolveGalleryUrl(relativePath) {
+    const base = getGalleryBasePath();
+    if (!relativePath) return relativePath;
+    return base ? base + '/' + relativePath : relativePath;
+}
 
 let currentEventId = null;
 let currentImageIndex = 0;
@@ -305,9 +319,7 @@ function openLightbox(eventId) {
     }
 
     // Preload and keep only images that actually exist.
-    // This ensures:
-    //   - if a folder is empty → nothing opens
-    //   - if you add/remove files → UI updates automatically
+    // Use resolveGalleryUrl so paths work when hosted in a subdirectory.
     const loadedImages = [];
     let remaining = candidateImages.length;
 
@@ -336,9 +348,10 @@ function openLightbox(eventId) {
     }
 
     candidateImages.forEach(img => {
+        const resolvedUrl = resolveGalleryUrl(img.url);
         const testImg = new Image();
         testImg.onload = function () {
-            loadedImages.push({ url: img.url });
+            loadedImages.push({ url: resolvedUrl });
             remaining--;
             finishLoading();
         };
@@ -346,7 +359,7 @@ function openLightbox(eventId) {
             remaining--;
             finishLoading();
         };
-        testImg.src = img.url;
+        testImg.src = resolvedUrl;
     });
 }
 
