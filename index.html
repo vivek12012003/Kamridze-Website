@@ -556,8 +556,9 @@
             }
 
             var rc = revealClasses[i % revealClasses.length];
+            var safeId = (evt.id || '').replace(/'/g, '&#39;');
 
-            return '<div class="gallery-item ' + rc + '" onclick="openLightbox(\'' + evt.id + '\')">' +
+            return '<div class="gallery-item ' + rc + '" data-event-id="' + safeId + '" role="button" tabindex="0">' +
                      '<div class="gallery-image" style="' + bgStyle + '">' + iconSvg + '</div>' +
                      '<div class="gallery-info">' +
                        '<h4>' + (evt.name || '').replace(/</g, '&lt;') + '</h4>' +

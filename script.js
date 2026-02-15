@@ -309,58 +309,31 @@ let currentEventId = null;
 let currentImageIndex = 0;
 let currentImages = [];
 
+// Show gallery immediately; no preload wait. Limit slots for fast open.
+var GALLERY_MAX_PHOTOS = 40;
+
 function openLightbox(eventId) {
     currentEventId = eventId;
+    var candidateImages = getImagesByEvent(eventId);
+    if (!candidateImages || candidateImages.length === 0) return;
 
-    // Get the list of *possible* images for this event
-    const candidateImages = getImagesByEvent(eventId);
-    if (!candidateImages || candidateImages.length === 0) {
-        return;
+    // Resolve URLs and take first N so modal opens instantly
+    var list = [];
+    var max = Math.min(candidateImages.length, GALLERY_MAX_PHOTOS);
+    for (var i = 0; i < max; i++) {
+        list.push({ url: resolveGalleryUrl(candidateImages[i].url) });
+    }
+    currentImages = list;
+
+    var event = getEvents().find(function(e) { return e.id === eventId; });
+    if (event) {
+        document.getElementById('albumTitle').textContent = event.name;
     }
 
-    // Preload and keep only images that actually exist.
-    // Use resolveGalleryUrl so paths work when hosted in a subdirectory.
-    const loadedImages = [];
-    let remaining = candidateImages.length;
-
-    function finishLoading() {
-        if (remaining > 0) return;
-
-        currentImages = loadedImages;
-        if (currentImages.length === 0) {
-            // No real images found for this event
-            return;
-        }
-
-        // Set album title
-        const event = getEvents().find(e => e.id === eventId);
-        if (event) {
-            document.getElementById('albumTitle').textContent = event.name;
-        }
-
-        // Open modal and show grid
-        const modal = document.getElementById('galleryModal');
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-
-        // Render grid of photos
-        renderPhotosGrid();
-    }
-
-    candidateImages.forEach(img => {
-        const resolvedUrl = resolveGalleryUrl(img.url);
-        const testImg = new Image();
-        testImg.onload = function () {
-            loadedImages.push({ url: resolvedUrl });
-            remaining--;
-            finishLoading();
-        };
-        testImg.onerror = function () {
-            remaining--;
-            finishLoading();
-        };
-        testImg.src = resolvedUrl;
-    });
+    var modal = document.getElementById('galleryModal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    renderPhotosGrid();
 }
 
 function closeGalleryModal() {
@@ -375,14 +348,24 @@ function closeGalleryModal() {
 }
 
 function renderPhotosGrid() {
-    const grid = document.getElementById('photosGrid');
+    var grid = document.getElementById('photosGrid');
     if (!grid) return;
-    
-    grid.innerHTML = currentImages.map((image, idx) => `
-        <div class="photo-item" onclick="openEnlargedView(${idx})" role="button" tabindex="0" title="Click to view photo ${idx + 1} of ${currentImages.length}">
-            <img src="${image.url}" alt="Photo ${idx + 1}" loading="lazy">
-        </div>
-    `).join('');
+    var list = currentImages;
+    var html = '';
+    for (var idx = 0; idx < list.length; idx++) {
+        var url = list[idx].url.replace(/"/g, '&quot;');
+        html += '<div class="photo-item" data-idx="' + idx + '" role="button" tabindex="0" title="View photo ' + (idx + 1) + ' of ' + list.length + '">';
+        html += '<img src="' + url + '" alt="Photo ' + (idx + 1) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'">';
+        html += '</div>';
+    }
+    grid.innerHTML = html;
+    // One listener for all items: works on both mouse and touch, no delay
+    grid.querySelectorAll('.photo-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+            var idx = parseInt(el.getAttribute('data-idx'), 10);
+            if (!isNaN(idx)) openEnlargedView(idx);
+        });
+    });
 }
 
 function openEnlargedView(idx) {
@@ -454,3 +437,15 @@ document.getElementById('galleryModal')?.addEventListener('click', (e) => {
         closeGalleryModal();
     }
 });
+
+// Gallery grid: one delegated listener so tap/click works on mobile and desktop
+(function() {
+    var grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+    grid.addEventListener('click', function(e) {
+        var item = e.target.closest('.gallery-item');
+        if (!item) return;
+        var id = item.getAttribute('data-event-id');
+        if (id && typeof openLightbox === 'function') openLightbox(id);
+    });
+})();

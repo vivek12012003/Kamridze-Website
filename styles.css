@@ -1186,6 +1186,9 @@ body {
     overflow: hidden;
     transition: all var(--duration-slow) var(--ease-out-expo);
     position: relative;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .gallery-item:hover {
@@ -1939,6 +1942,8 @@ textarea:focus-visible {
     z-index: 2000;
     padding: 0;
     box-sizing: border-box;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
 }
 
 .gallery-modal.open {
@@ -1991,6 +1996,8 @@ textarea:focus-visible {
     font-size: 1.75rem;
     color: rgb(var(--foreground));
     cursor: pointer;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
@@ -1999,6 +2006,7 @@ textarea:focus-visible {
     transition: all var(--duration-fast);
     border-radius: var(--radius-md);
     flex-shrink: 0;
+    touch-action: manipulation;
 }
 
 .modal-close-btn:hover {
@@ -2020,6 +2028,7 @@ textarea:focus-visible {
     width: 100%;
     box-sizing: border-box;
     background: rgb(var(--card));
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Ensure no overlapping - strict responsive design */
@@ -2053,6 +2062,7 @@ textarea:focus-visible {
     border-radius: var(--radius-md);
     overflow: hidden;
     cursor: pointer;
+    touch-action: manipulation;
     background: rgb(var(--muted-light));
     border: 1px solid rgb(var(--border));
     display: block;
@@ -2117,10 +2127,13 @@ textarea:focus-visible {
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: var(--radius-md);
     cursor: pointer;
+    touch-action: manipulation;
     display: flex;
     align-items: center;
     justify-content: center;
