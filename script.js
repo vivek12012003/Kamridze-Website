@@ -3,7 +3,7 @@
 //   State Management & Initialization
 // ============================================
 
-let currentTheme = 'light';
+let currentTheme = 'ligth';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('js-loaded');
