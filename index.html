@@ -46,7 +46,7 @@
                     </button>
 
                     <!-- Enquire Button -->
-                    <button class="primary-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfI9bNyS3SXZ24pIIBdmWokB4xat0kX1krXR785Jr71MoKVcg/viewform?usp=dialog'" aria-label="Enquire now - opens Google">Enquire Now</button>
+                    <button class="primary-btn header-enquire" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfI9bNyS3SXZ24pIIBdmWokB4xat0kX1krXR785Jr71MoKVcg/viewform?usp=dialog'" aria-label="Enquire now - opens Google">Enquire Now</button>
 
                     <!-- Mobile Menu Toggle (Sideboard) -->
                     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
@@ -66,11 +66,21 @@
             <button onclick="scrollToSection('about'); toggleMobileMenu()" class="mobile-nav-link">About</button>
             <button onclick="scrollToSection('gallery'); toggleMobileMenu()" class="mobile-nav-link">Gallery</button>
             <button onclick="scrollToSection('contact'); toggleMobileMenu()" class="mobile-nav-link">Contact</button>
-            <button onclick="window.location.href='https://www.google.com'; toggleMobileMenu()" class="mobile-cta-btn">Enquire Now</button>
+            <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfI9bNyS3SXZ24pIIBdmWokB4xat0kX1krXR785Jr71MoKVcg/viewform?usp=dialog'; toggleMobileMenu()" class="mobile-cta-btn">Enquire Now</button>
         </div>
     </header>
 
     <main>
+        <!-- Mobile Quick Navigation (visible on small screens) -->
+        <nav class="quick-nav-mobile" aria-label="Quick section navigation">
+            <div class="quick-nav-inner">
+                <button class="quick-nav-btn" onclick="scrollToSection('hero')">Home</button>
+                <button class="quick-nav-btn" onclick="scrollToSection('about')">About</button>
+                <button class="quick-nav-btn" onclick="scrollToSection('gallery')">Gallery</button>
+                <button class="quick-nav-btn" onclick="scrollToSection('contact')">Contact</button>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="container">
@@ -216,7 +226,7 @@
                                 <img src="President.jpg" alt="President, Kamridze International School" class="leadership-card-photo" loading="lazy">
                             </div>
                             <h4 class="leadership-card-name">Mr. Anand Sharma</h4>
-                            <p class="leadership-card-role">President</p>
+                            <p class="leadership-card-role">Director</p>
                             <p class="leadership-card-desc">Providing vision and guidance for the school, supporting academic excellence and a strong, student-first culture.</p>
                         </div>
                         <div class="leadership-card reveal reveal-delay-2">

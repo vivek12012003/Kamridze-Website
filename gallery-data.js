@@ -35,8 +35,8 @@ function getEvents() {
             name: 'Annual Function',
             description: '2025-26',
             gradient: '135deg, #667eea 0%, #764ba2 100%',
-            // main.jpg inside "Event 1" will be used as the cover
-            coverImage: 'Event 1/main.jpg'
+            // main.jpeg inside "Event 1" will be used as the cover
+            coverImage: 'Event 1/main.jpeg'
         },
         {
             id: 'event-2',
@@ -73,7 +73,7 @@ function getEvents() {
 // Map each event id to its folder name and
 // the maximum number of images to try.
 const eventFolderConfig = {
-    'event-1': { folder: 'Event 1', maxImages: 50, ext: 'jpg' },
+    'event-1': { folder: 'Event 1', maxImages: 50, ext: 'jpeg' },
     'event-2': { folder: 'Event 2', maxImages: 50, ext: 'jpeg' },
     'event-3': { folder: 'Event 3', maxImages: 50, ext: 'jpeg' },
     'event-4': { folder: 'Event 4', maxImages: 50, ext: 'jpeg' },
