@@ -1838,6 +1838,74 @@ body {
 
 /* Mobile-specific improvements */
 @media (max-width: 639px) {
+    /* Global section padding & container feel lighter on small screens */
+    .hero {
+        padding-top: 5.25rem;
+        padding-bottom: 3rem;
+    }
+    
+    .about,
+    .gallery,
+    .contact,
+    .footer {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    /* Hero: cleaner stacking and full-width CTAs */
+    .hero-content {
+        text-align: left;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        margin-bottom: 3rem;
+    }
+
+    .hero-buttons .primary-btn,
+    .hero-buttons .outline-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .stats {
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    /* About cards & leadership */
+    .cards-grid {
+        gap: 1.25rem;
+        margin-bottom: 3rem;
+    }
+
+    .card,
+    .leadership-founder,
+    .leadership-card,
+    .program.enhanced {
+        padding: 1.5rem;
+    }
+
+    .leadership-section {
+        gap: 2rem;
+    }
+
+    /* Programs */
+    .programs-section {
+        margin-top: 3rem;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        gap: 1rem;
+    }
+
+    /* Contact layout */
     .contact-content {
         gap: 2rem;
     }
@@ -1848,6 +1916,15 @@ body {
     
     .contact-info {
         order: 1;
+    }
+
+    /* Footer stacking */
+    .footer-content {
+        gap: 2.25rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
     }
 }
 
