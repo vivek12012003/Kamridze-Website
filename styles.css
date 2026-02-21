@@ -3,25 +3,31 @@
    Modern, Engaging, Accessible
    ============================================ */
 
-   :root {
+:root {
     /* Brand Palette - Educational, Green-focused */
     /* Core brand greens */
-    --primary: 31 122 31;              /* #1F7A1F deep green */
-    --primary-hover: 22 96 22;         /* slightly darker green */
+    --primary: 31 122 31;
+    /* #1F7A1F deep green */
+    --primary-hover: 22 96 22;
+    /* slightly darker green */
     --primary-light: 31 122 31 / 0.12;
     --primary-glow: 31 122 31 / 0.25;
 
     /* Bright lime accent for interactive highlights */
-    --secondary: 126 211 33;           /* #7ED321 */
+    --secondary: 126 211 33;
+    /* #7ED321 */
 
     /* Golden yellow for knowledge / highlights */
-    --accent: 245 196 0;               /* #F5C400 */
+    --accent: 245 196 0;
+    /* #F5C400 */
     --accent-hover: 220 176 0;
     --accent-light: 245 196 0 / 0.18;
 
     /* Global surface + typography */
-    --background: 255 255 255;         /* #FFFFFF */
-    --foreground: 0 0 0;               /* #000000 */
+    --background: 255 255 255;
+    /* #FFFFFF */
+    --foreground: 0 0 0;
+    /* #000000 */
     --card: 255 255 255;
     --card-foreground: 0 0 0;
     --border: 226 232 240;
@@ -29,7 +35,8 @@
     --muted-light: 245 247 250;
 
     /* Call-to-action red - used sparingly */
-    --cta: 192 57 43;                  /* #C0392B */
+    --cta: 192 57 43;
+    /* #C0392B */
     --cta-hover: 150 45 34;
 
     /* Slightly darker card tone for footer gradients */
@@ -106,7 +113,8 @@ body {
 .dark .header {
     /* Simpler, more institutional dark header */
     background: rgb(6 24 6);
-    border-bottom-color: rgb(var(--accent)); /* subtle golden underline */
+    border-bottom-color: rgb(var(--accent));
+    /* subtle golden underline */
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
 }
 
@@ -188,7 +196,7 @@ body {
         width: 2.5rem;
         height: 2.5rem;
     }
-    
+
     .logo-text h1 {
         font-size: 1.5rem;
     }
@@ -219,7 +227,8 @@ body {
 }
 
 .dark .nav-link::after {
-    background: linear-gradient(90deg, #F5C400, #7ED321); /* gold to lime */
+    background: linear-gradient(90deg, #F5C400, #7ED321);
+    /* gold to lime */
 }
 
 .dark .nav-link:hover {
@@ -271,6 +280,7 @@ body {
     .desktop {
         display: flex;
     }
+
     .mobile-menu-btn {
         display: none;
     }
@@ -362,7 +372,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
     opacity: 0;
     transition: opacity var(--duration-normal);
 }
@@ -556,7 +566,9 @@ body {
 }
 
 @media (min-width: 768px) {
-    .mobile-menu { display: none; }
+    .mobile-menu {
+        display: none;
+    }
 }
 
 /* Mobile quick navigation bar (shows direct links to sections on small screens) */
@@ -567,7 +579,8 @@ body {
 @media (max-width: 767px) {
     .quick-nav-mobile {
         position: sticky;
-        top: 3.5rem; /* sits just below fixed header */
+        top: 3.5rem;
+        /* sits just below fixed header */
         z-index: 950;
         background: rgba(var(--background), 0.98);
         border-bottom: 1px solid rgb(var(--border));
@@ -719,13 +732,14 @@ body {
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .hero-description {
         font-size: 1.05rem;
     }
 }
 
 .hero-title {
+    align-items: center;
     font-size: 2.25rem;
     font-weight: 800;
     line-height: 1.2;
@@ -735,7 +749,9 @@ body {
 }
 
 @media (min-width: 400px) {
-    .hero-title { font-size: 2.5rem; }
+    .hero-title {
+        font-size: 2.5rem;
+    }
 }
 
 .highlight {
@@ -747,11 +763,15 @@ body {
 }
 
 @media (min-width: 640px) {
-    .hero-title { font-size: 3.75rem; }
+    .hero-title {
+        font-size: 3.75rem;
+    }
 }
 
 @media (min-width: 768px) {
-    .hero-title { font-size: 4.5rem; }
+    .hero-title {
+        font-size: 4.5rem;
+    }
 }
 
 .hero-description {
@@ -847,11 +867,15 @@ body {
 }
 
 @media (min-width: 480px) {
-    .stat-number { font-size: 2.25rem; }
+    .stat-number {
+        font-size: 2.25rem;
+    }
 }
 
 @media (min-width: 640px) {
-    .stat-number { font-size: 2.5rem; }
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }
 
 .stat-label {
@@ -870,11 +894,15 @@ body {
 }
 
 @media (min-width: 640px) {
-    .about { padding: 5rem 2rem; }
+    .about {
+        padding: 5rem 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
-    .about { padding: 6rem 2rem; }
+    .about {
+        padding: 6rem 2rem;
+    }
 }
 
 .section-header {
@@ -914,14 +942,16 @@ body {
 }
 
 @media (min-width: 640px) {
-    .section-header h2 { 
+    .section-header h2 {
         font-size: 2.25rem;
         margin-bottom: 0.75rem;
     }
 }
 
 @media (min-width: 1024px) {
-    .section-header h2 { font-size: 2.5rem; }
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
 }
 
 .section-header p {
@@ -955,10 +985,12 @@ body {
         align-items: flex-start;
         gap: 2.5rem;
     }
+
     .about-top .section-header {
         flex: 1;
         text-align: left;
     }
+
     .about-top .section-header p {
         margin-left: 0;
         margin-right: 0;
@@ -1051,8 +1083,13 @@ body {
 }
 
 @media (min-width: 768px) {
-    .section-header.left { text-align: left; }
-    .section-header.left p { margin: 0; }
+    .section-header.left {
+        text-align: left;
+    }
+
+    .section-header.left p {
+        margin: 0;
+    }
 }
 
 /* Cards - Enhanced with depth */
@@ -1177,6 +1214,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    object-fit: contain;
 }
 
 .leadership-founder-name {
@@ -1437,11 +1475,15 @@ body {
 }
 
 @media (min-width: 640px) {
-    .gallery { padding: 5rem 2rem; }
+    .gallery {
+        padding: 5rem 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
-    .gallery { padding: 6rem 2rem; }
+    .gallery {
+        padding: 6rem 2rem;
+    }
 }
 
 .dark .gallery {
@@ -1564,15 +1606,21 @@ body {
 }
 
 @media (min-width: 640px) {
-    .contact { padding: 4rem 1.5rem; }
+    .contact {
+        padding: 4rem 1.5rem;
+    }
 }
 
 @media (min-width: 768px) {
-    .contact { padding: 5rem 2rem; }
+    .contact {
+        padding: 5rem 2rem;
+    }
 }
 
 @media (min-width: 1024px) {
-    .contact { padding: 6rem 2rem; }
+    .contact {
+        padding: 6rem 2rem;
+    }
 }
 
 .contact-content {
@@ -1890,6 +1938,7 @@ body {
 
 /* Mobile-specific improvements */
 @media (max-width: 639px) {
+
     /* Compact header on mobile so content starts higher */
     .header-content {
         padding: 0.5rem 0.75rem;
@@ -1929,7 +1978,7 @@ body {
         padding-top: 5.25rem;
         padding-bottom: 3rem;
     }
-    
+
     .about,
     .gallery,
     .contact,
@@ -1995,11 +2044,11 @@ body {
     .contact-content {
         gap: 2rem;
     }
-    
+
     .contact-map {
         margin-bottom: 0;
     }
-    
+
     .contact-info {
         order: 1;
     }
@@ -2026,7 +2075,9 @@ body {
 }
 
 @media (min-width: 640px) {
-    .footer { padding: 4rem 2rem 2rem; }
+    .footer {
+        padding: 4rem 2rem 2rem;
+    }
 }
 
 .footer-content {
@@ -2244,7 +2295,7 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-item {
         gap: 0.6rem;
     }
@@ -2271,10 +2322,21 @@ body.js-loaded .reveal.visible {
     transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
 
 /* ============================================
    UTILITIES
@@ -2287,7 +2349,9 @@ body.js-loaded .reveal.visible {
 }
 
 @media (min-width: 640px) {
-    .container { padding: 0 2rem; }
+    .container {
+        padding: 0 2rem;
+    }
 }
 
 main {
@@ -2339,7 +2403,10 @@ textarea:focus-visible {
 
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;

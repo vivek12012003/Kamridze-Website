@@ -54,7 +54,7 @@ function getEvents() {
         },
         {
             id: 'event-4',
-            name: 'Surya Namaskar 2026',
+            name: 'Surya Namaskar',
             description: '2025-26',
             gradient: '135deg, #ff5f6d 0%, #ffc371 100%',
             coverImage: 'Event 4/main.jpeg'
